@@ -1,0 +1,185 @@
+/* style.css — one file, linked from every page */
+
+/* 1 · Text: set it once on body, everything inside inherits it */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #1f2937;
+  background: #fbfaf7;
+}
+
+/* 2 · The content column */
+main {
+  max-width: 48rem;
+  margin: 0 auto;           /* centred */
+  padding: 1rem 2rem;
+}
+
+img {
+  max-width: 100%;          /* never wider than its box */
+  height: auto;
+}
+
+/* 3 · The homepage hero: one wide photo, cropped to fit */
+.hero img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;        /* fill the box, crop the rest — never squash */
+  border-radius: 10px;
+}
+
+/* 4 · The header: logo left, links centred, action right */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+nav .links {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0 auto;           /* pushes it to the centre */
+  padding: 0;
+  list-style: none;         /* no bullets */
+}
+
+nav a {
+  color: #334155;
+  text-decoration: none;    /* no underlines */
+}
+
+nav .logo {
+  font-weight: 800;
+  color: #c2410c;
+}
+
+nav .action {
+  border: 1.5px solid #0369a1;
+  border-radius: 99px;      /* a pill */
+  padding: .3em 1em;
+  color: #0369a1;
+}
+
+nav a:hover {
+  color: #c2410c;
+}
+
+/* 5 · One quote card — the box model, on all twenty at once */
+.quote {
+  max-width: 34rem;
+  margin-bottom: 1.5rem;    /* space outside */
+  padding: 1.1em 1.3em;     /* space inside */
+  background: #fff;
+  border: 1px solid #dcd8d0;
+  border-left: 4px solid #c2410c;
+  border-radius: 10px;
+}
+
+.quote blockquote {
+  margin: 0;                /* drop the browser's indent inside the card */
+}
+
+/* 6 · The site footer: by id, because every quote has a <footer> too */
+#site-footer {
+  padding: 1rem 2rem;
+  border-top: 1px solid #dcd8d0;
+  color: #6b7280;
+}
+
+/* 7 · The quotes hero: one random quote, above the twenty */
+.quote-hero {
+  margin-bottom: 2rem;
+  padding: 1.4em 1.5em;     /* space inside */
+  background: #fff;
+  border: 1px solid #dcd8d0;
+  border-left: 4px solid #0369a1;
+  border-radius: 10px;
+}
+
+.quote-hero blockquote {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.quote-hero blockquote p {
+  margin: 0 0 .5rem;
+}
+
+.quote-hero blockquote p:last-child {
+  margin-bottom: 0;         /* no gap before the source */
+}
+
+.hero-source {
+  margin: .8rem 0 1.2rem;
+  color: #6b7280;
+}
+
+/* 8 · The useless machine: a switch that runs away */
+.box {
+  position: relative;       /* the switch needs a box to move inside */
+  height: 16rem;
+  background: #fff;
+  border: 1px solid #dcd8d0;
+  border-radius: 10px;
+}
+
+.switch {
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  padding: .8em 1.5em;
+  font: inherit;            /* a button does not inherit the font by itself */
+  font-weight: 700;
+  color: #fff;
+  background: #c2410c;
+  border: 0;
+  border-radius: 99px;
+  cursor: pointer;
+}
+
+.switch:focus-visible {
+  outline: 3px solid #0369a1;
+  outline-offset: 3px;
+}
+
+.score {
+  margin: 1rem 0;
+  color: #334155;
+}
+
+/* 9 · A plain button, the same look as the action in the nav */
+button.action {
+  font: inherit;
+  padding: .35em 1.1em;
+  color: #0369a1;
+  background: transparent;
+  border: 1.5px solid #0369a1;
+  border-radius: 99px;
+  cursor: pointer;
+}
+
+button.action:hover {
+  color: #c2410c;
+  border-color: #c2410c;
+}
+
+/* 10 · On a narrow screen the header stacks, everything else already fits */
+@media (max-width: 40rem) {
+  nav {
+    flex-wrap: wrap;
+    padding: .75rem 1rem;
+  }
+
+  nav .links {
+    width: 100%;            /* the links get their own line */
+    margin: .5rem 0 0;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  main {
+    padding: 1rem 1.1rem;
+  }
+}

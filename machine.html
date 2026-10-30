@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The useless machine · Zitang CUi</title>
+  <link rel="icon" href="favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <h1>The useless machine</h1>
+    <p>A machine with one job: it switches itself off. Flip the switch and it flips back.
+      After a few tries it stops sitting still and starts to move.</p>
+
+    <section class="machine">
+      <h2>The machine</h2>
+
+      <div class="box" id="box">
+        <button class="switch" id="switch">Switch</button>
+      </div>
+
+      <p class="score">
+        Flips: <strong id="flips">0</strong> ·
+        Escapes: <strong id="escapes">0</strong>
+      </p>
+
+      <button class="action" id="reset">Start again</button>
+    </section>
+
+    <h2>How it works</h2>
+    <ul>
+      <li>Every click is one flip. The switch never stays on — that is the whole machine.</li>
+      <li>Every third flip, the switch jumps to another place inside the box.</li>
+      <li><em>Start again</em> puts the switch back and sets both counts to zero.</li>
+    </ul>
+
+    <h2>A little history</h2>
+    <p>The useless machine was a toy sold in the 1960s: a box with a switch, and a small arm
+      that reached out and turned the switch off again. It does nothing, and that is the point.</p>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="nav.js"></script>
+  <script src="machine.js"></script>
+</body>
+</html>
